@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+  Мои подписки
+{% endblock %}
+{% block content %}
+{% include 'posts/includes/switcher.html' %}
+  <p>
+    <h1>Посты любимых авторов</h1>
+  </p>
+  <p>
+  {% for post in page_obj %}
+  {% block posts %}
+    {% include 'posts/includes/display_posts.html' %}
+  {% endblock %}
+  {% endfor %} 
+  </p>
+
+  {% include 'posts/includes/paginator.html' %}
+
+{% endblock %}
