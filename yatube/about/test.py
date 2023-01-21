@@ -31,11 +31,11 @@ class StaticPagesURLTests(TestCase):
 
 
 class StaticPagesViewsTests(TestCase):
-    """URL-адрес использует соответствующий шаблон."""
     def setUp(self):
         self.guest_client = Client()
 
     def test_pages_uses_correct_template(self):
+        """URL-адрес использует соответствующий шаблон."""
         url_templates_names = {
             reverse('about:author'): 'about/author.html',
             reverse('about:tech'): 'about/tech.html'
